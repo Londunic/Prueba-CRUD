@@ -11,7 +11,7 @@
 
     if (isset($_POST['edad']) && isset($_POST['nombre']) && isset($_POST['apellido']) && isset($_POST['genero'])) {
         if (!is_numeric($_POST['edad'])) {
-            $_SESSION['error'] = 'Edad deben ser numérico';
+            $_SESSION['error'] = 'La edad debe ser numérica';
             header("Location: index.php");
             return;
         }
@@ -20,21 +20,28 @@
             header("Location: index.php");
             return;
         }
-
-        $sql = "UPDATE usuario SET edad = :edad,
-                nombre = :nombre, apellido = :apellido, genero=:genero
-                WHERE cedula = :cedula";
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute(array(
+        elseif( ($_POST['genero'] == "M") || ($_POST['genero'] == "F") ){
+            $sql = "UPDATE usuario SET edad = :edad,
+            nombre = :nombre, apellido = :apellido, genero=:genero
+            WHERE cedula = :cedula";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute(array(
                 ':edad' => $_POST['edad'],
                 ':nombre' => $_POST['nombre'],
                 ':apellido' => $_POST['apellido'],
                 ':genero' => $_POST['genero'],
                 ':cedula' => $_GET['cedula'])
-        );
-        $_SESSION['success'] = 'Regristro actualizado';
-        header('Location: index.php');
-        return;
+            );
+            $_SESSION['success'] = 'Regristro actualizado';
+            header('Location: index.php');
+            return;
+        }
+        else{
+            $_SESSION['error'] = 'Genero invalido, tiene que ser M/F';
+            header("Location: index.php");
+            return;
+        }
+
     }
 
     // Para estar seguros que la cedula esta presente

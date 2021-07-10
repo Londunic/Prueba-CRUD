@@ -39,7 +39,7 @@
     <ul>
         <?php
             if (sizeof($rows) > 0) {
-                echo "<table border='1'>
+                echo "<table class='table' border='1'>
                         <thead>
                             <tr>
                                 <th>Cedula</th>
@@ -48,7 +48,8 @@
                                 <th>Apellido</th>
                                 <th>Género</th>
                                 <th>Opciones</th>
-                                </tr></thead>";
+                            </tr>
+                        </thead>";
 
                 foreach ($rows as $row) {
                     echo("<tr><td>");
