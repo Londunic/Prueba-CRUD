@@ -69,16 +69,16 @@
     <form method="post">
         <p>Cedula:
 
-            <input type="text" name="cedula" size="40"/></p>
+            <input type="text" name="cedula" size="40"/> (Obligatorio)</p>
         <p>Edad:
 
-            <input type="text" name="edad" size="40"/></p>
+            <input type="text" name="edad" size="40"/> (Obligatorio)</p>
         <p>Nombre:
 
-            <input type="text" name="nombre" size="10"/></p>
+            <input type="text" name="nombre" size="10"/> (Obligatorio)</p>
         <p>Apellido:
 
-            <input type="text" name="apellido" size="10"/></p>
+            <input type="text" name="apellido" size="10"/> (Obligatorio)</p>
         <p>Género M/F:
             <br>
             <input type="radio" name="genero" value="M" checked>M<br>

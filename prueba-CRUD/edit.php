@@ -78,10 +78,24 @@
 <div class="container">
     <h1>Editar Usuario</h1>
     <form method="post">
-        <p>Edad <input type="text" name="edad" size="40" value="<?php echo $row['edad'] ?>"/></p>
-        <p>Nombre <input type="text" name="nombre" size="40" value="<?php echo $row['nombre'] ?>"/></p>
-        <p>Apellido <input type="text" name="apellido" size="10" value="<?php echo $row['apellido'] ?>"/></p>
-        <p>Género M/F <input type="text" name="genero" size="10" value="<?php echo $row['genero'] ?>"/></p>
+        <p>Cedula: <?php echo $row['edad'] ?></p>
+        <p>Edad <input type="text" name="edad" size="40" value="<?php echo $row['edad'] ?>"/> (Obligatorio)</p>
+        <p>Nombre <input type="text" name="nombre" size="40" value="<?php echo $row['nombre'] ?>"/> (Obligatorio)</p>
+        <p>Apellido <input type="text" name="apellido" size="10" value="<?php echo $row['apellido'] ?>"/> (Obligatorio)</p>
+        <?php
+        if ($row['genero'] == "M"){
+            echo "<p>Género M/F 
+                    <br>
+                    <input type='radio' name='genero' value='M' checked>M<br>
+                    <input type='radio' name='genero' value='F'>F<br></p>";
+        }
+        else{
+            echo "<p>Género M/F 
+                    <br>
+                    <input type='radio' name='genero' value='M'>M<br>
+                    <input type='radio' name='genero' value='F' checked>F<br></p>";
+        }
+        ?>
         <input type="submit" value="Guardar">
         <input type="submit" name="cancelar" value="Cancelar">
     </form>
