@@ -37,7 +37,7 @@
             return;
         }
         else{
-            $_SESSION['error'] = 'Genero invalido, tiene que ser M/F';
+            $_SESSION['error'] = 'Género invalido, tiene que ser M/F';
             header("Location: index.php");
             return;
         }

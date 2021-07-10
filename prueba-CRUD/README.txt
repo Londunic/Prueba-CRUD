@@ -29,4 +29,5 @@ INSERT INTO usuario (cedula,edad,nombre,apellido,genero) VALUES (1,22,"Jose","Or
 INSERT INTO usuario (cedula,edad,nombre,apellido,genero) VALUES (2,34,"Maria","Hernandez","F");
 INSERT INTO usuario (cedula,edad,nombre,apellido,genero) VALUES (3,12,"Luis","Lopez","M");
 
-4- Una vez realizado lo anterior, dirijase al buscador de internet, y ya podra ejecutar el programa.
+4- Una vez realizado lo anterior, dirijase al buscador de internet, y ya podra ejecutar el programa. Para esto la ruta sera:
+   localhost/prueba-CRUD/index.php
